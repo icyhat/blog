@@ -1,3 +1,2 @@
-移步`Issues`
-
+移步`Issues` https://github.com/icyhat/blog/issues
 : )
