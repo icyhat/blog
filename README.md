@@ -1,7 +1,7 @@
-> Hello, we met here!
+> Hi there, my friend!
 
-1. recent posts: https://github.com/icyhat/blog/issues
-2. categories: https://github.com/icyhat/blog/labels
+1. Recent posts: https://github.com/icyhat/blog/issues
+2. Categories: https://github.com/icyhat/blog/labels
 
 Enjoy reading!
 
