@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            body {
+                background: grey;
+            }
+            .☯ {
+/*              基本大小，使用变量计算比例大小可以生成任意大小太极图，而非绑死在某个数值
+*/                  --radius: 400px;
+/*              太极图产生步骤
+                    1. 产生底盘大圆（正方形变圆）
+                        1. 正方形
+                            1. 上半部分
+                                div自己
+                                    大小，宽是高的两倍，所以才能变成上一半
+*/                                      width: calc(var(--radius) * 2);
+                                        height: calc(var(--radius) * 1);
+/*                                  颜色
+*/                                      background-color: white;
+/*                          2. 下半部分
+                                div的border
+                                    大小，border的厚度是radius的一倍，所以才是下半部分
+*/                                      border-width: 0 0 var(--radius) 0;
+/*                                  颜色
+*/                                      border-bottom-color: black;
+                                        border-style: solid;
+/*                      2. 使之变圆
+*/                          border-radius: 50%;
+/*                      3. 为了给剩下的内容作为定位目标
+*/                          position: relative;
+/*                  2. 产生两个点的小圆
+                        1. 左边的点，因为相对定位，所以伪元素放在☯这个元素里
+*/          }               .☯::before {
+/*                              所有.☯的元素的大儿子元素，都会显示的内容，默认为空
+*/                                  content:"";
+/*                              定位，该元素的左上角相对于父元素的位置
+*/                                  position: absolute;
+                                    left: 0%;
+                                    top: 50%;
+/*                              内点
+*/                                  --inner: calc(var(--radius) / 3);
+                                    width: var(--inner);
+                                    height: var(--inner);
+                                    background-color: white;
+/*                              外圈，长度关系满足：厚度的2倍 + 内点的width = 整个大圆的半径
+*/                                  border-width: calc((var(--radius) - var(--inner)) / 2);
+                                    border-style: solid;
+                                    border-color: black;             
+/*                              变圆
+*/                                  border-radius: 50%;
+                            }
+/*                      2. 右边的点，因为相对定位，所以伪元素放在☯这个元素里
+*/                         .☯::after {
+/*                              所有.☯的元素的大儿子元素，都会显示的内容，默认为空
+*/                                  content:"";
+/*                              定位，该元素的左上角相对于父元素的位置
+*/                                  position: absolute;
+                                    right: 0%;
+                                    top: 50%;
+/*                              内点
+*/                                  --inner: calc(var(--radius) / 3);
+                                    width: var(--inner);
+                                    height: var(--inner);
+                                    background-color: black;
+/*                              外圈，长度关系满足：厚度的2倍 + 内点的width = 整个大圆的半径
+*/                                  border-width: calc((var(--radius) - var(--inner)) / 2);
+                                    border-style: solid;
+                                    border-color: white;
+/*                              变圆
+*/                                  border-radius: 50%;
+                            }
+            </style>
+        <div class="☯"></div>
+        <button id="btn">点我修改大小</button>
+        <script>
+            let btn = document.getElementById("btn")
+            btn.onclick(e => {
+                let size = prompt("给我个数字？");
+                let root = document.getElementsByClassName("☯")[0];
+                root.style.setProperty('--radius', size + "px")
+            })
+        </script>
+    </body>
+</html>
