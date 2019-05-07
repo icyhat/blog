@@ -7,7 +7,7 @@
             }
             .☯ {
 /*              基本大小，使用变量计算比例大小可以生成任意大小太极图，而非绑死在某个数值
-*/                  --radius: 100px;
+*/                  --radius: 200px;
 /*              太极图产生步骤
                     1. 产生底盘大圆（正方形变圆）
                         1. 正方形
@@ -72,14 +72,13 @@
                             }
             </style>
         <div class="☯"></div>
-        <button id="btn">点我修改大小</button>
+        <button onclick="resetRadius()">点我修改大小</button>
         <script>
-            let btn = document.getElementById("btn")
-            btn.onclick(e => {
-                let size = prompt("给我个数字？");
-                let root = document.getElementsByClassName("☯")[0];
-                root.style.setProperty('--radius', size + "px")
-            })
+            let resetRadius = e => {
+                let size = prompt("给我个数字？")
+                let yin_and_yang = document.getElementsByClassName("☯")[0]
+                yin_and_yang.style.setProperty('--radius', size + "px")
+            }
         </script>
     </body>
 </html>
