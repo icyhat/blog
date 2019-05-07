@@ -5,7 +5,7 @@ Hi there,
 
 > use intersection of Labels to filter content
 
-e.g. select Labels both in `LeetCode`, `JavaScript`, `Binary Search`
+e.g. Click Labels both in `LeetCode`, `JavaScript`, `Binary Search`
 
 Enjoy reading!
 
