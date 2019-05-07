@@ -74,9 +74,9 @@
         <div class="☯"></div>
         <button onclick="resetRadius()">点我修改大小</button>
         <script>
-            let resetRadius = e => {
-                let size = prompt("给我个数字？")
-                let yin_and_yang = document.getElementsByClassName("☯")[0]
+            const resetRadius = e => {
+                const size = prompt("给我个数字？")
+                const yin_and_yang = document.getElementsByClassName("☯")[0]
                 yin_and_yang.style.setProperty('--radius', size + "px")
             }
         </script>
